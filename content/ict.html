@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICT 科學務會議資料總覽</title>
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb;
+      --brand:#2454a6; --brand2:#0f766e; --warn:#b45309; --bad:#b91c1c; --good:#047857;
+      --shadow:0 8px 24px rgba(15,23,42,.08); --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;line-height:1.55}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .wrap{max-width:1220px;margin:0 auto;padding:18px 22px}
+    .top{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    h1{font-size:24px;margin:0;color:#0f172a;letter-spacing:.02em}
+    .sub{font-size:13px;color:var(--muted);margin-top:4px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    button,.pill{border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 12px;border-radius:999px;cursor:pointer;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+    button:hover,.pill:hover{border-color:#94a3b8;background:#f8fafc}
+    nav{display:flex;gap:8px;overflow:auto;padding-top:14px}
+    nav a{white-space:nowrap;text-decoration:none;color:#334155;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font-size:14px}
+    nav a:hover{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+    main{max-width:1220px;margin:0 auto;padding:22px}
+    .grid{display:grid;gap:16px}
+    .cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media(max-width:980px){.cols-4,.cols-3,.cols-2{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.actions{justify-content:flex-start}}
+    section{scroll-margin-top:116px;margin-bottom:28px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .kpi{display:flex;flex-direction:column;gap:6px;min-height:120px}
+    .kpi .label{font-size:13px;color:var(--muted)}.kpi .num{font-size:30px;font-weight:800;color:#0f172a}.kpi .note{font-size:13px;color:var(--muted)}
+    h2{font-size:21px;margin:0 0 12px;color:#0f172a;border-left:5px solid var(--brand);padding-left:10px}
+    h3{font-size:17px;margin:0 0 8px;color:#111827}.muted{color:var(--muted)}
+    ul{margin:8px 0 0 20px;padding:0}li{margin:6px 0}.small{font-size:13px}.tag{display:inline-block;border-radius:999px;padding:3px 9px;font-size:12px;border:1px solid var(--line);background:#f8fafc;margin:2px}
+    .tag.blue{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}.tag.green{background:#ecfdf5;border-color:#bbf7d0;color:#047857}.tag.orange{background:#fff7ed;border-color:#fed7aa;color:#c2410c}.tag.red{background:#fef2f2;border-color:#fecaca;color:#b91c1c}
+    table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+    th,td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{background:#f1f5f9;color:#0f172a;font-weight:700}tr:last-child td{border-bottom:0}.money{text-align:right;white-space:nowrap}.negative{color:var(--bad);font-weight:700}.positive{color:var(--good);font-weight:700}
+    .callout{border-left:5px solid var(--brand2);background:#f0fdfa;border-radius:12px;padding:14px 16px}.warn{border-left-color:var(--warn);background:#fffbeb}.bad{border-left-color:var(--bad);background:#fef2f2}
+    .timeline{display:grid;gap:10px}.step{display:grid;grid-template-columns:110px 1fr;gap:12px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px}.date{font-weight:800;color:var(--brand)}
+    .searchbox{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);font-size:16px;margin:8px 0 14px;background:#fff}.hidden{display:none!important}
+    .checklist label{display:flex;align-items:flex-start;gap:10px;margin:9px 0}.checklist input{margin-top:5px}.script{font-size:16px;background:#fff;border:1px dashed #94a3b8;border-radius:14px;padding:16px;white-space:pre-wrap}.footer{font-size:12px;color:var(--muted);text-align:center;margin:28px 0}
+    @media print{header,.actions,nav,.searchbox{display:none}body{background:#fff}.card{box-shadow:none;break-inside:avoid}main{padding:0}.wrap{padding:0 0 14px}section{margin-bottom:16px}a{color:inherit}.no-print{display:none}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1>ICT 科學務會議資料總覽</h1>
+        <div class="sub">2025-2026 自評報告、2026-2027 周年工作計劃、財政預算及財政紀錄｜會議快速版</div>
+      </div>
+      <div class="actions">
+        <button onclick="window.print()">列印 / 匯出 PDF</button>
+        <button onclick="toggleCompact()">精簡 / 詳細</button>
+        <a class="pill" href="#script">直接看匯報稿</a>
+      </div>
+    </div>
+    <nav>
+      <a href="#overview">總覽</a><a href="#deadline">遞交要求</a><a href="#report">25/26 自評</a><a href="#plan">26/27 計劃</a><a href="#budget">財政</a><a href="#meeting">會議重點</a><a href="#script">匯報稿</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section id="overview">
+    <h2>一頁總覽</h2>
+    <div class="grid cols-4">
+      <div class="card kpi"><div class="label">文件初稿</div><div class="num">12/6</div><div class="note">或之前以電郵遞交</div></div>
+      <div class="card kpi"><div class="label">文件定稿</div><div class="num">10/7</div><div class="note">或之前完成最終版本</div></div>
+      <div class="card kpi"><div class="label">教師專業發展</div><div class="num">119.5h</div><div class="note">有系統模式；另有 9.5h 其他模式</div></div>
+      <div class="card kpi"><div class="label">26/27 學校預算</div><div class="num">$78,000</div><div class="note">較 25/26 預算下調，交流團不列入學校支出預算</div></div>
+    </div>
+    <div class="grid cols-3" style="margin-top:16px">
+      <div class="card"><h3>本年度成果</h3><ul><li>STEAM、AI、國民教育及校外比賽活動豐富。</li><li>學生在 ROBOG、AI 比賽、Python、遊戲設計等項目獲獎。</li><li>教師完成 AI、STEAM、國安、ICT 課程及評卷相關培訓。</li></ul></div>
+      <div class="card"><h3>主要不足</h3><ul><li>學生掌握抽象編程概念仍需加強。</li><li>AI 提示詞、描述問題及自主使用 AI 的能力不足。</li><li>理論題答題框架、關鍵字及訂正遷移能力仍需提升。</li></ul></div>
+      <div class="card"><h3>下年度方向</h3><ul><li>結構化編程教學、示例及分層習作。</li><li>以 AI 建立校本教材及題庫，加入提示詞教學。</li><li>完善專題研習檢查點，加入 AI 倫理、資訊素養、網絡安全及反思。</li></ul></div>
+    </div>
+  </section>
+
+  <section id="deadline">
+    <h2>文件遞交要求</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>需要處理的文件</h3>
+        <div class="tablewrap"><table><thead><tr><th>文件</th><th>初稿</th><th>定稿</th><th>形式</th></tr></thead><tbody>
+          <tr><td>2026-2027 周年工作計劃</td><td>12/6 或之前</td><td>10/7 或之前</td><td>電郵</td></tr>
+          <tr><td>2026-2027 財政預算</td><td>12/6 或之前</td><td>10/7 或之前</td><td>電郵</td></tr>
+          <tr><td>2025-2026 周年自評報告</td><td>12/6 或之前</td><td>10/7 或之前</td><td>電郵</td></tr>
+          <tr><td>2025-2026 財政紀錄</td><td>12/6 或之前</td><td>10/7 或之前</td><td>電郵</td></tr>
+          <tr><td>2024-2027 教師手冊更新，如有</td><td>—</td><td>10/7 或之前</td><td>電郵</td></tr>
+        </tbody></table></div>
+      </div>
+      <div class="card checklist">
+        <h3>會前檢查清單</h3>
+        <label><input type="checkbox"> 周年自評報告已回應原訂成功準則及評估方法</label>
+        <label><input type="checkbox"> 26/27 計劃已對應學校三年發展計劃及關注事項</label>
+        <label><input type="checkbox"> 財政預算與下年度策略及活動互相對應</label>
+        <label><input type="checkbox"> 財政紀錄能解釋主要超支項目及原因</label>
+        <label><input type="checkbox"> 已準備會議口頭匯報重點</label>
+      </div>
+    </div>
+  </section>
+
+  <section id="report">
+    <h2>2025-2026 周年自評重點</h2>
+    <input class="searchbox no-print" id="search" placeholder="搜尋關鍵字，例如：AI、編程、國民教育、財政、提示詞、比賽" oninput="filterCards()" />
+    <div class="grid cols-2 searchable">
+      <div class="card item"><h3>教師專業發展</h3><p><span class="tag blue">有系統 119.5h</span><span class="tag">其他 9.5h</span><span class="tag orange">國民教育 39h</span><span class="tag green">STEAM 15h</span></p><ul><li>AI 教學、生成式 AI、機器學習平台及 AI 入學科分享。</li><li>STEAM+AI、do your :bit、STEAM UP 教材應用。</li><li>國家安全教育、《憲法》和《基本法》、法治及香港國安法課程。</li><li>ICT 課程規劃、DSE 簡介、HKACE 評卷會議。</li></ul></div>
+      <div class="card item"><h3>學生課外活動</h3><ul><li>校外比賽：ROBOG、國安滅罪光槍射擊邀請賽、時光對話 AI 比賽、Python Application Challenge、抗戰勝利 80 週年遊戲設計比賽。</li><li>走出課室：AI 賦百業高峰論壇暨百度 MeDo 香港首發會。</li><li>遊學及交流：澳洲悉尼 URC 比賽團、英國 STEAM 深度交流團。</li><li>其他：中六 ICT 模擬考試。</li></ul></div>
+      <div class="card item"><h3>學生表現及獎項</h3><ul><li>ROBOG 國際邀請賽港澳聯合賽：冠軍及參賽獎。</li><li>國安滅罪光槍射擊邀請賽：優異獎。</li><li>時光對話 AI 重構跨世代記憶大賽：初中組及高中組金獎。</li><li>Python Application Challenge：一等獎。</li><li>抗戰勝利 80 週年遊戲設計比賽：二等獎、三等獎。</li><li>STEM 教育獎學金。</li></ul></div>
+      <div class="card item"><h3>關注事項 1：多元學教策略</h3><ul><li>已進行中三 Swift 編程共同備課、觀課及議課，並加入提問策略。</li><li>學生對抽象編程概念掌握仍未理想，需要更結構化的引導步驟、示例及分層習作。</li><li>教師已試用 Poe、Gemini、NotebookLM 等工具製作教材、題目及練習。</li><li>學生 AI 提示詞表達、描述問題及自主運用 AI 能力仍有待提升。</li><li>理論題答題框架、關鍵字訓練及小測後訂正需加強。</li></ul></div>
+      <div class="card item"><h3>關注事項 2：豐富學習經歷</h3><ul><li>中二「思．創好世界」全部組別完成作品及展示。</li><li>鐳射切割及 3D 打印提升作品完整度。</li><li>小組導師制及技術支援工作坊有助跨科教師支援學生專題研習。</li><li>AI、Delightex、媒體素養活動提升科技應用及資訊判斷能力。</li><li>學生自主跟進進度、AI 倫理及負責任科技使用仍需更系統化。</li></ul></div>
+      <div class="card item callout"><h3>自評一句總結</h3><p>本年度 ICT 科在 STEAM、AI、國民教育及校外比賽方面成果明顯；下一步要把活動成果轉化為更有系統的課程、評估、回饋及學生反思。</p></div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <h2>2026-2027 周年工作計劃重點</h2>
+    <div class="grid cols-2">
+      <div class="card"><h3>關注事項 1：多元學教策略，促進學習效能</h3><ul><li>加強編程課堂的結構化引導、示例及分層習作。</li><li>更有系統地運用 AI 建立校本教材及題庫。</li><li>加入提示詞教學，提升學生向 AI 發問、修訂及反思的能力。</li><li>由級負責人統籌課業項目、分數及評改準則。</li><li>加強理論題答題框架、關鍵字訓練及小測後訂正。</li><li>將 AI 聖誕卡片英語創作室納入常規專題習作。</li></ul></div>
+      <div class="card"><h3>關注事項 2：豐富學習經歷，培養共通能力</h3><ul><li>繼續支援科技製作及數碼工具應用。</li><li>完善鐳射切割、3D 打印及檔案準備教學。</li><li>提早安排小組導師會議及技術工作坊，明確分工。</li><li>完善專題研習階段性檢查點，提升學生自主跟進意識。</li><li>更新初中 AI 課程及 Delightex 專題，加入 AI 倫理、資訊素養及網絡安全元素。</li><li>配合媒體素養學習活動加入簡短反思。</li></ul></div>
+    </div>
+    <div class="card" style="margin-top:16px"><h3>25/26 成效 → 26/27 發展對應表</h3><div class="tablewrap"><table><thead><tr><th>25/26 發現</th><th>26/27 跟進</th></tr></thead><tbody>
+      <tr><td>學生掌握抽象編程概念較弱</td><td>結構化引導、示例、分層習作、步驟化支援</td></tr>
+      <tr><td>學生 AI 提示詞及描述問題能力不足</td><td>加入提示詞教學，設計範例及反思任務</td></tr>
+      <tr><td>理論題答題及訂正遷移能力需提升</td><td>建立答題框架、關鍵字訓練、小測後訂正流程</td></tr>
+      <tr><td>專題研習進度跟進不平均</td><td>加入階段性檢查點、小組導師會議及技術工作坊</td></tr>
+      <tr><td>AI 倫理、資訊素養及網絡安全需更系統化</td><td>融入初中 AI、Delightex、媒體素養及學科攤位活動</td></tr>
+    </tbody></table></div></div>
+  </section>
+
+  <section id="budget">
+    <h2>財政預算及財政紀錄</h2>
+    <div class="grid cols-3">
+      <div class="card kpi"><div class="label">25/26 預算</div><div class="num">$125,000</div><div class="note">學校預算</div></div>
+      <div class="card kpi"><div class="label">25/26 實際支出</div><div class="num negative">$377,937.38</div><div class="note">主要來自交流團及校外比賽 / 培訓</div></div>
+      <div class="card kpi"><div class="label">26/27 預算</div><div class="num">$78,000</div><div class="note">較保守，交流團為 $0</div></div>
+    </div>
+    <div class="card" style="margin-top:16px"><h3>主要項目對照</h3><div class="tablewrap"><table><thead><tr><th>項目</th><th class="money">25/26 預算</th><th class="money">25/26 實際</th><th class="money">26/27 預算</th><th>備註</th></tr></thead><tbody>
+      <tr><td>家具設備</td><td class="money">$1,500</td><td class="money">$4,699</td><td class="money">$3,000</td><td>較 25/26 增加</td></tr>
+      <tr><td>教材或教具</td><td class="money">$26,000</td><td class="money">$25,261.16</td><td class="money">$26,000</td><td>維持穩定</td></tr>
+      <tr><td>教材書商</td><td class="money">$1,000</td><td class="money">$1,000</td><td class="money">$1,500</td><td>略增</td></tr>
+      <tr><td>教師用參考書</td><td class="money">$1,000</td><td class="money">$0</td><td class="money">$500</td><td>下調</td></tr>
+      <tr><td>學生用參考書</td><td class="money">$1,000</td><td class="money">$0</td><td class="money">$500</td><td>另有 e-Payment 約 $39,364</td></tr>
+      <tr><td>IT 領袖生 / 機械人學會 / 電腦學會</td><td class="money">$12,500</td><td class="money">$1,897</td><td class="money">$10,000</td><td>保留基本支援</td></tr>
+      <tr><td>校外比賽 / 培訓班 / 專業認証 / 講座</td><td class="money">$20,500</td><td class="money negative">$100,558.70</td><td class="money">$25,000</td><td>25/26 主要超支項目之一</td></tr>
+      <tr><td>專室維修</td><td class="money">$1,500</td><td class="money">$0</td><td class="money">$1,500</td><td>維持</td></tr>
+      <tr><td>交流團</td><td class="money">$50,000</td><td class="money negative">$241,600</td><td class="money">$0</td><td>26/27 不列入學校預算</td></tr>
+      <tr><td>雜項</td><td class="money">$10,000</td><td class="money">$2,921.52</td><td class="money">$10,000</td><td>維持</td></tr>
+      <tr><th>合計</th><th class="money">$125,000</th><th class="money negative">$377,937.38</th><th class="money">$78,000</th><th></th></tr>
+    </tbody></table></div></div>
+    <div class="callout warn" style="margin-top:16px"><strong>會議說法：</strong>25/26 實際支出較高，主要是交流團及校外課程 / 比賽 / 培訓支出集中；26/27 已調整預算結構，將恆常教材、比賽及維修維持基本支援，交流團則不列入學校支出預算。</div>
+  </section>
+
+  <section id="meeting">
+    <h2>學務會議可講重點</h2>
+    <div class="grid cols-2">
+      <div class="card"><h3>必講 5 點</h3><ol><li>文件：初稿 12/6，定稿 10/7，全部以電郵交。</li><li>25/26 成果：AI、STEAM、國民教育、比賽及專業發展均有成果。</li><li>25/26 不足：編程抽象概念、AI 提示詞、理論題答題及訂正仍需跟進。</li><li>26/27 發展：結構化教學、AI 校本教材 / 題庫、提示詞教學、資訊素養及網絡安全。</li><li>財政：25/26 超支主因是交流團及校外活動；26/27 預算已調整至 $78,000。</li></ol></div>
+      <div class="card"><h3>可能被問的問題</h3><ul><li><strong>為何 25/26 支出高？</strong><br>主要涉及交流團及校外課程 / 比賽 / 培訓，屬非恆常及發展性支出。</li><li><strong>26/27 為何預算減少？</strong><br>交流團不列入學校支出預算，預算集中於教材、比賽、學會及維修。</li><li><strong>AI 會如何落地？</strong><br>由教師製作校本教材及題庫開始，並加入學生提示詞教學及反思。</li><li><strong>國民教育如何融入 ICT？</strong><br>透過國家科技發展、網絡安全、數據安全、負責任使用科技及學科攤位活動滲入。</li></ul></div>
+    </div>
+  </section>
+
+  <section id="script">
+    <h2>30-60 秒匯報稿</h2>
+    <div class="script">ICT 科本年度在 STEAM、AI、國民教育及校外比賽方面均有明顯成果，學生參與多項比賽並取得獎項，教師亦完成多項 AI、STEAM、國民教育及資訊科技相關專業培訓。
+
+自評方面，我們留意到學生在抽象編程概念、AI 提示詞表達、理論題答題及自主反思方面仍需加強。因此，26/27 年度計劃會聚焦結構化編程教學、AI 校本教材及題庫、提示詞教學、課業評改標準化、資訊素養及網絡安全元素融入課程。
+
+財政方面，25/26 實際支出較高，主要來自交流團及校外課程 / 比賽 / 培訓。下年度預算已作相應調整，交流團不列入學校支出預算，並保留教材、比賽及專室維修等基本支援。</div>
+  </section>
+
+  <div class="footer">資料根據已上載文件整理；適合會議前快速瀏覽及列印。</div>
+</main>
+<script>
+  function toggleCompact(){ document.body.classList.toggle('compact'); document.querySelectorAll('.compact .card ul, .compact .card ol').forEach(el=>{}); }
+  function filterCards(){
+    const q=document.getElementById('search').value.trim().toLowerCase();
+    document.querySelectorAll('.searchable .item').forEach(card=>{
+      card.classList.toggle('hidden', q && !card.innerText.toLowerCase().includes(q));
+    });
+  }
+</script>
+</body>
+</html>
